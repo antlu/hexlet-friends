@@ -18,7 +18,7 @@ python-dateutil = "^2.8"
 apscheduler = "^3.6.3"
 
 [tool.poetry.dev-dependencies]
-wemake-python-styleguide = "^0.13"
+wemake-python-styleguide = "^0.14"
 faker = "^2.0"
 
 [build-system]
