@@ -33,7 +33,7 @@ IGNORED_CONTRIBUTORS = tuple(
 session = requests.Session()
 
 
-def create_contributions(   # noqa: C901,WPS231
+def create_contributions(   # noqa: C901,R701,WPS231
     repo, contrib_data, user_field=None, id_field=None, type_=None,
 ):
     """Create a contribution record."""
@@ -89,7 +89,7 @@ def create_contributions(   # noqa: C901,WPS231
 class Command(management.base.BaseCommand):
     """A management command for syncing with GitHub."""
 
-    help = "Saves data from GitHub to database"  # noqa: WPS125
+    help = "Saves data from GitHub to database"  # noqa: A003,WPS125
 
     def add_arguments(self, parser):
         """Add arguments for the command."""
@@ -133,7 +133,7 @@ class Command(management.base.BaseCommand):
             number_of_repos = len(repos_to_process)
             for i, repo_data in enumerate(repos_to_process, start=1):  # noqa: WPS111,E501
                 repo, _ = misc.update_or_create_record(Repository, repo_data)
-                logger.info(f"{repo} ({i}/{number_of_repos})")
+                logger.info(f"{repo} ({i}/{number_of_repos})")  # noqa: G004
                 if repo_data['size'] == 0:
                     logger.info("Empty repository")
                     continue
