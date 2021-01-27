@@ -19,7 +19,7 @@ apscheduler = "^3.6.3"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.13"
-faker = "^2.0"
+faker = "^5.8"
 
 [build-system]
 requires = ["poetry>=1.0.5"]
